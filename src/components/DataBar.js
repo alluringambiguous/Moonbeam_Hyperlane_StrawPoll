@@ -68,7 +68,7 @@ function DataBar() {
                 <DataCard
                     key={2}
                     Title={"GLMR Price"}
-                    Data={`$ ${Math.round(glmrToUsd / 40833 * 10000) / 10000}`}
+                    Data={`$ ${glmrToUsd?(Math.round(glmrToUsd / 40833 * 10000) / 10000):(0.4357)}`}
                     TopContractAddress={"http://glmrtousdconverter"}
                 />,
                 <DataCard

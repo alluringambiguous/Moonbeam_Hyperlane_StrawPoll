@@ -18,7 +18,7 @@ import ProfilePicture from "./ProfilePicture"
 function ProposalCard({ name, uri, proposer, upvote, downvote,setOpenAlert }) {
     const [like, setLike] = useState(upvote)
     const [dislike, setDislike] = useState(downvote)
-    const { chainId, isWeb3Enabled } = useMoralis()
+    const { account,chainId, isWeb3Enabled } = useMoralis()
 
     // let contractAddress 
     const contractAddressG = contractAddressData.contractAddressG
@@ -48,7 +48,7 @@ function ProposalCard({ name, uri, proposer, upvote, downvote,setOpenAlert }) {
         functionName: "upVote",
         params: {
             _uri: uri,
-            _voter: "0x88D7abb5D9b3f458976c494E81FF89E88a801da1",
+            _voter: account,
             _contractAddress: contractAddressAlt,
 
         },
@@ -59,7 +59,7 @@ function ProposalCard({ name, uri, proposer, upvote, downvote,setOpenAlert }) {
         functionName: "downVote",
         params: {
             _uri: uri,
-            _voter: "0x88D7abb5D9b3f458976c494E81FF89E88a801da1",
+            _voter: account,
             _contractAddress: contractAddressAlt,
         },
     })

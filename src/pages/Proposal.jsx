@@ -72,24 +72,26 @@ function Proposal() {
         params: { _uri: proposalUrl },
     })
 
-    const { runContractFunction: upVote } = useWeb3Contract({
-        abi: abi,
-        contractAddress: contractAddress,
-        functionName: "upVote",
-        params: {
-            _uri: proposalUrl,
-            _voter: "0x88D7abb5D9b3f458976c494E81FF89E88a801da1",
-        },
-    })
-    const { runContractFunction: downVote } = useWeb3Contract({
-        abi: abi,
-        contractAddress: contractAddress,
-        functionName: "downVote",
-        params: {
-            _uri: proposalUrl,
-            _voter: "0x88D7abb5D9b3f458976c494E81FF89E88a801da1",
-        },
-    })
+       const { runContractFunction: upVote } = useWeb3Contract({
+           abi: abi,
+           contractAddress: contractAddress,
+           functionName: "upVote",
+           params: {
+               _uri: proposalUrl,
+               _voter: account,
+               _contractAddress: contractAddressAlt,
+           },
+       })
+       const { runContractFunction: downVote } = useWeb3Contract({
+           abi: abi,
+           contractAddress: contractAddress,
+           functionName: "downVote",
+           params: {
+               _uri: proposalUrl,
+               _voter: account,
+               _contractAddress: contractAddressAlt,
+           },
+       })
     const { runContractFunction: getDownVotes } = useWeb3Contract({
         abi: abi,
         contractAddress: contractAddress,
@@ -186,8 +188,10 @@ function Proposal() {
         return ["success", tx]
     }
     const handleDislike = async () => {
+        console.log("entered handle dislike")
         setOpenAlert(true)
         await downVote({ onSuccess: (tx) => handleSuccess(tx) })
+        console.log("await done")
     }
 
     return (
