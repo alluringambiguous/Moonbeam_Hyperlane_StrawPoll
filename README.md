@@ -1,5 +1,5 @@
 # Updated:
-* Latest Deployment: [Netlify](https://creative-raindrop-ebbba0.netlify.app/)
+* Latest Deployment: [Netlify]((https://fastidious-sopapillas-f53247.netlify.app/))
 
 
 # How to run locally
