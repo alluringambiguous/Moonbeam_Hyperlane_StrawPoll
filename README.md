@@ -1,6 +1,8 @@
 # Updated:
 * Latest Deployment: [Netlify](https://fastidious-sopapillas-f53247.netlify.app/)
 
+# Wallet of bounty
+0x0FBdbb708C7D8De94eB3C9c32557554476e629fd
 
 # How to run locally
 
